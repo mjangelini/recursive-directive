@@ -1,0 +1,20 @@
+<table class="table table-hover"> 
+  <thead>
+    <tr>
+      <th ng-repeat="column in columns">{{column.title}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat-start="row in content">
+      <td ng-repeat="column in columns" ng-click="toggle(column, row, $parent.$index, $event)">
+        <span ng-if="!column.drawer">{{row[column.field]}}</span>
+        <a ng-if="column.drawer">{{column.drawer.title}}</a>
+      </td>
+    </tr>
+    <tr ng-repeat-end ng-show="drawer.index == $index">
+      <td class="drawer" colspan="{{columns.length}}">
+        Loading...
+      </td>
+    </tr>
+  </tbody>
+</table>
