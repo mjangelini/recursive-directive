@@ -79,7 +79,8 @@
                         $scope.drawer.content = newTable.content;
                         
                         // Find the drawer and add the recursive table
-                        var elem = angular.element($event.srcElement).parent().parent().next().find('td');
+                        var target = $event.target || $event.srcElement; // Browsers handle differently
+                        var elem = angular.element(target).parent().parent().next().find('td');
                         var tbl = '<recurisve-table columns="drawer.columns" content="drawer.content"></recursive-table>';
                         
                         // Recompile the element build directive

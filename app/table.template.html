@@ -6,9 +6,9 @@
   </thead>
   <tbody>
     <tr ng-repeat-start="row in content">
-      <td ng-repeat="column in columns" ng-click="toggle(column, row, $parent.$index, $event)">
+      <td ng-repeat="column in columns">
         <span ng-if="!column.drawer">{{row[column.field]}}</span>
-        <a ng-if="column.drawer">{{column.drawer.title}}</a>
+        <a ng-if="column.drawer" ng-click="toggle(column, row, $parent.$parent.$index, $event)">{{column.drawer.title}}</a>
       </td>
     </tr>
     <tr ng-repeat-end ng-show="drawer.index == $index">
