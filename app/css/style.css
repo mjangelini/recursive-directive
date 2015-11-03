@@ -1,0 +1,27 @@
+html, body {
+  margin:0;
+  padding:10px;
+}
+table {
+  border: 1px solid #DDD;
+  margin:0 !important;
+}
+th {
+  background:rgba(0,0,0,0.05) !important;
+}
+th, td {
+  padding:5px;
+}
+td.drawer {
+  padding:20px !important;
+}
+a {
+  cursor:pointer;
+}
+h1 {
+  margin-bottom:20px;
+}
+footer {
+  text-align: center;
+  padding:20px 0;
+}
