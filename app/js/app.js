@@ -5,7 +5,7 @@
     // Initialize module
     angular.module('recursive', [])
       .controller('RecursiveCtrl', recursiveCtrl)
-      .directive('recurisveTable', recurisveTable);
+      .directive('recursiveTable', recursiveTable);
 
     // Controller
     function recursiveCtrl($scope) {
@@ -53,7 +53,7 @@
     }
 
     // Recursive Table Directive
-    function recurisveTable($compile, $timeout) {
+    function recursiveTable($compile, $timeout) {
         return {
             restrict: 'E',
             scope: {
@@ -81,7 +81,7 @@
                         // Find the drawer and add the recursive table
                         var target = $event.target || $event.srcElement; // Browsers handle differently
                         var elem = angular.element(target).parent().parent().next().find('td');
-                        var tbl = '<recurisve-table columns="drawer.columns" content="drawer.content"></recursive-table>';
+                        var tbl = '<recursive-table columns="drawer.columns" content="drawer.content"></recursive-table>';
                         
                         // Recompile the element build directive
                         // $timeout not necessary, just to make clearer
